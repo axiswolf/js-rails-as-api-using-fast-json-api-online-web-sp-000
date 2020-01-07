@@ -3,7 +3,7 @@ class SightingsController < ApplicationController
     sightings = Sighting.all
     render json: SightingSerializer.new(sighting)
   end
-  
+
   def show
     # @sighting = Sighting.find(params[:id])
     # render json: @sighting.to_json(:include => {
