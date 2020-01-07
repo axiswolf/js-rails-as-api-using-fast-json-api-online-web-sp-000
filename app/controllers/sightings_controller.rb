@@ -12,6 +12,9 @@ class SightingsController < ApplicationController
     #     :location => {:only =>[:latitude, :longitude]}},
     #     :except => [:updated_at])
     sighting = Sighting.find(params[:id])
+    options = {
+      include: [:bird, :location]
+    }
     render json: SightingSerializer.new(sighting)
   end
 end
